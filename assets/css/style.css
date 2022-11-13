@@ -146,7 +146,7 @@ li {
   width: 100%;
 }
 
-.data-list li:not(:last-child) {
+.title:not(:last-child) {
   border-bottom: 1px solid #fff; 
 }
 
@@ -163,25 +163,37 @@ li {
   content: "\f107";
   font-family: "FontAwesome";
   float: right;
-  transition: all .6s; 
+  transition: all .3s; 
 }
 
 .data-item.active .title::after {
   transform: rotate(180deg);
-  transition: all .6s;
+  transition: all .3s;
 }
 
 .body {
-  display: none;
+  height: 0;
   padding: 15px;
+  margin-bottom: -35px;
   background-color: #fff;
-  transition: all 1s;
+  overflow: hidden;
 }
 
 .data-item.active .body{
-  display: block;
-  transition: all 1s;
+  height: 100%;
+  margin-bottom: inherit;
+  transition: all .3s ease-in-out;
+  animation: fade .3s ease-in-out;
 }
+
+ @keyframes fade{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+ }
 /*=================================
   main styling ends here
 =================================*/
