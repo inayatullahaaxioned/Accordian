@@ -103,30 +103,85 @@ li {
   width: 86%; 
   margin: 0 auto;
 }
-/*=================================
-  Header styling starts here
-=================================*/
-
-
-
-
-
-
-/*=================================
-  Header styling ends here
-=================================*/  
+ 
+*,
+*::before,
+*::after {
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*=================================
   main styling starts here
 =================================*/
+.container {
+  background-color: #455A64;
+}
 
+.accordian {
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.heading {
+  margin-bottom: 100px;
+  color: #fff;
+  font-size: 40px;
+  text-transform: uppercase;
+}
 
+.data-list {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
+.data-list li { 
+  width: 100%;
+}
 
+.data-list li:not(:last-child) {
+  border-bottom: 1px solid #fff; 
+}
 
+.title {
+  padding: 15px 20px;
+  background-color: #009688;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
+.title::after {
+  content: "\f107";
+  font-family: "FontAwesome";
+  float: right;
+  transition: all .6s; 
+}
 
+.data-item.active .title::after {
+  transform: rotate(180deg);
+  transition: all .6s;
+}
+
+.body {
+  display: none;
+  padding: 15px;
+  background-color: #fff;
+  transition: all 1s;
+}
+
+.data-item.active .body{
+  display: block;
+  transition: all 1s;
+}
 /*=================================
   main styling ends here
 =================================*/
