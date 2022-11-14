@@ -157,6 +157,8 @@ li {
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .title::after {
@@ -182,16 +184,15 @@ li {
 .data-item.active .body{
   height: 100%;
   margin-bottom: inherit;
-  transition: all .3s ease-in-out;
-  animation: fade .3s ease-in-out;
+  animation: fade .5s ;
 }
 
  @keyframes fade{
   from{
-    opacity: 0;
+    transform: translateY(-100%);
   }
   to{
-    opacity: 1;
+    transform: translateY(0);
   }
  }
 /*=================================
