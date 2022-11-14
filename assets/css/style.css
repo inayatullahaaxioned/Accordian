@@ -174,16 +174,29 @@ li {
 }
 
 .body {
-  height: 0;
+  display: none;
   padding: 15px;
   margin-bottom: -35px;
   background-color: #fff;
   overflow: hidden;
+  transition: all .5s ease-out;
+  animation: closeFade .5s ;
+}
+
+@keyframes closeFade {
+  from{
+    transform: translateY(100%);
+  }
+  to{
+    transform: translateY(0);
+  }
 }
 
 .data-item.active .body{
-  height: 100%;
+  /* height: 100%; */
+  display: block;
   margin-bottom: inherit;
+  transition: all .5s;
   animation: fade .5s ;
 }
 
